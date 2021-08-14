@@ -1,0 +1,33 @@
+<div class="demo-options-container">
+  <h2 class="title">RxJS schedulers demo</h2>
+
+  <label for="delay">Delay</label>
+  <input [formControl]="delayControl" id="delay" type="number" placeholder="0">
+
+  <button type="button" (click)="onClickToggleButton()">{{ toggleButtonLabel | async }}</button>
+  <button type="button" (click)="onClickResetButton()">⏹ Reset</button>
+</div>
+
+<div class="demo-satellites-legend">
+  <h2>Legends</h2>
+  <ul class="satellite-legend-list">
+    <li style="--satellite-color: red;">default</li>
+    <li style="--satellite-color: green;">async</li>
+    <li style="--satellite-color: blue;">animationFrame</li>
+  </ul>
+</div>
+
+<div class="demo-container">
+  <div
+    [style.--scheduler-satellite-rotate]="defaultScheduler | async"
+    class="scheduler-satellite default"
+  ></div>
+  <div
+    [style.--scheduler-satellite-rotate]="asyncScheduler | async"
+    class="scheduler-satellite async"
+  ></div>
+  <div
+    [style.--scheduler-satellite-rotate]="animationFrameScheduler | async"
+    class="scheduler-satellite animation-frame"
+  ></div>
+</div>

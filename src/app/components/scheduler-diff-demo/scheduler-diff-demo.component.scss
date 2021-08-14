@@ -1,0 +1,83 @@
+.demo-container {
+  background: url("/assets/earth-globe.svg") no-repeat center;
+  background-size: 100px;
+  height: 600px;
+  width: 600px;
+  z-index: -1;
+  margin: 0 auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.demo-options-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 1rem;
+}
+
+.demo-options-container .title {
+  margin-top: 0;
+}
+
+.scheduler-satellite {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(var(--scheduler-satellite-rotate, 0deg));
+
+  background-repeat: no-repeat;
+  background-position: right;
+  background-size: 100px;
+
+  --size: 100%;
+  width: var(--size);
+  height: var(--size);
+}
+
+.scheduler-satellite.default {
+  background-image: url("/assets/satellite-default.svg");
+  --size: 55%;
+}
+
+.scheduler-satellite.async {
+  background-image: url("/assets/satellite-async.svg");
+  --size: 85%;
+}
+
+.scheduler-satellite.animation-frame {
+  background-image: url("/assets/satellite-animation-frame.svg");
+  --size: 115%;
+}
+
+.satellite-legend-list {
+  list-style: none;
+  padding-left: 1em;
+}
+
+.satellite-legend-list li {
+  position: relative;
+  padding-left: 10px;
+}
+
+.satellite-legend-list li::before {
+  content: '';
+  display: block;
+  width: 7px;
+  height: 7px;
+  background-color: var(--satellite-color);
+  border-radius: 50%;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.demo-satellites-legend {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  padding: 1rem;
+}
